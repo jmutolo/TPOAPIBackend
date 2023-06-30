@@ -20,7 +20,7 @@ class UsuariosController {
             const {username, password} = req.body;
             let isUserRegistered = await AuthService.hasValidCredentials(username, password);
             if(isUserRegistered) {
-                //const user = await UsuariosModel.findOne({username});
+                
                 const user = await UsuariosService.buscarUsuarioRegistrado(username);
 
                 const token = jwt.sign(user.toJSON(), process.env.PRIVATE_KEY, {
