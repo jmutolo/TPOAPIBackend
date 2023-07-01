@@ -21,9 +21,7 @@ class UsuariosService {
         try{
             
             const count = await UsuariosModel.countDocuments({});
-            //let isUser = await UsuariosModel.findOne({username: user.username}); 
             
-            //if(isUser) {
             if(count != 0){
                 throw new Error("Usuario ya registrado");
             } 
