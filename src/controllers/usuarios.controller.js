@@ -34,6 +34,7 @@ class UsuariosController {
                 });
             } else {
                 return res.status(401).json({
+                    status: 401,
                     message: "Unauthorized.",
                 });
             }
@@ -89,6 +90,14 @@ class UsuariosController {
             });
         }
     }
+
+   async usuarioValidado(req, res){
+    console.log("validado");
+    return res.status(200).json({
+        status: 200,
+        message: "Token valido",
+    });
+  }
 
 }
 
